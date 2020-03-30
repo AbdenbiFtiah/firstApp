@@ -1,0 +1,18 @@
+<!-- Expansion panel -->
+<mat-accordion *ngIf="prestations.length > 0" >
+  <mat-expansion-panel *ngFor="let prestation of prestations" >
+    <mat-expansion-panel-header >
+      <mat-panel-title> Prestations</mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-label>Etablissement : {{prestation.etablissement}} </mat-label><br><br>
+    <mat-label>Medecin : {{prestation.medecin}} </mat-label><br><br>
+    <mat-label>Type d'intervention : {{prestation.intervention}} </mat-label><br><br>
+    <mat-label>Date d'intervention : {{prestation.dateIntervention}} </mat-label><br><br>
+    <mat-label>Réference : {{prestation.reference}} </mat-label><br><br>
+    <mat-label>Montant : {{prestation.montant}} DHs TTC </mat-label><br><br>
+
+
+
+  </mat-expansion-panel>
+</mat-accordion>
+<mat-hint *ngIf="prestations.length <= 0">Aucune prestation pour le moment.s</mat-hint>

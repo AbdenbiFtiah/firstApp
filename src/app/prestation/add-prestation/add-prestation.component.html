@@ -1,0 +1,70 @@
+<div class="container">
+  <form (submit)="onAddPrestation(prestationForm)"  #prestationForm="ngForm">
+   <mat-form-field appearance="fill">
+    <mat-label>Etablissement</mat-label>
+    <mat-select name="etablissement" ngModel required #etablissement="ngModel" >
+      <mat-option value="Etab1">Etab1</mat-option>
+      <mat-option value="Etab2">Etab2</mat-option>
+      <mat-option value="Etab3">Etab3</mat-option>
+    </mat-select>
+    <mat-hint >*</mat-hint>
+    <mat-error *ngIf="etablissement.invalid">Ce champ est obligatoire.</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" id="medecin">
+    <mat-label>Médecin</mat-label>
+    <mat-select name="medecin" ngModel required #medecin="ngModel">
+      <mat-option value="Medecin1">Medecin1</mat-option>
+      <mat-option value="Medecin2">Medecin2</mat-option>
+      <mat-option value="Medecin3">Medecin3</mat-option>
+    </mat-select>
+    <mat-hint >*</mat-hint>
+    <mat-error *ngIf="medecin.invalid">Ce champ est obligatoire.</mat-error>
+
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Type d'intervention</mat-label>
+    <mat-select name="intervention" ngModel required #intervention="ngModel">
+      <mat-option value="Intervention1">Intervention1</mat-option>
+      <mat-option value="Intervention2">Intervention2</mat-option>
+      <mat-option value="Intervention3">Intervention3</mat-option>
+    </mat-select>
+    <mat-hint >*</mat-hint>
+    <mat-error *ngIf="intervention.invalid">Ce champ est obligatoire.</mat-error>
+
+  </mat-form-field>
+  <mat-form-field id="date">
+    <mat-label>Date d'intervention</mat-label>
+    <input matInput name="date" ngModel  #dateIntervention="ngModel" >
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+    <mat-hint >*</mat-hint>
+    <mat-error *ngIf="dateIntervention.invalid">Ce champ est obligatoire.</mat-error>
+
+  </mat-form-field>
+  <br>
+  <mat-form-field appearance="fill">
+    <mat-label>Reférence externe:</mat-label>
+    <input matInput name="reference" ngModel  #reference="ngModel">
+  </mat-form-field> <br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Montant TTC:</mat-label>
+    <input matInput type="number" name="montant" ngModel required #montant="ngModel">
+    <mat-hint >*</mat-hint>
+    <mat-error *ngIf="montant.invalid">Ce champ est obligatoire.</mat-error>
+  </mat-form-field>
+  <br>
+  <button mat-raised-button type="submit" >Valider</button>
+  <br>
+  <br>
+  <br>
+
+  <mat-hint >(*): Champ obligatoire.</mat-hint>
+
+
+</form>
+
+
+</div>

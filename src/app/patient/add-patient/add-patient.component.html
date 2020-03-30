@@ -1,0 +1,110 @@
+
+
+<div class="divTitle">
+  <span class="mat-display-3">Formulaire</span>
+</div>
+
+<div class="container">
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Nom:</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Prenom:</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>CIN:</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>CNSS:</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field>
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </td>
+      </tr>
+    </table>
+
+    <p>
+      <mat-form-field class="example-full-width">
+        <mat-label>Adresse:</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field>
+    </p>
+
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Ville</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Region</mat-label>
+            <input matInput>
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label> Code Postale</mat-label>
+            <input matInput #postalCode maxlength="5" placeholder="Ex. 24000" value="24000">
+            <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+          </mat-form-field>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label id="sexe">Sexe</label>
+          <br>
+          <mat-radio-group aria-labelledby="Sexe">
+            <mat-radio-button labelPosition="before" value="Homme">Homme</mat-radio-button>
+            <mat-radio-button labelPosition="before" value="Femme">Femme</mat-radio-button>
+          </mat-radio-group>
+
+        </td>
+        <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>Telephone</mat-label>
+              <span matPrefix>+212 &nbsp;</span>
+              <input type="tel" matInput placeholder="655533205">
+              <mat-icon matSuffix>mode_edit</mat-icon>
+            </mat-form-field>
+
+        </td>
+      </tr>
+
+      <tr>
+        <td>
+          <mat-form-field class="example-full-width">
+            <mat-label>Rapport</mat-label>
+            <textarea matInput rows="5" placeholder="..."></textarea>
+          </mat-form-field>
+        </td>
+
+      </tr>
+    </table>
+    <div class="example-button-row">
+      <button mat-raised-button >Valider</button>
+
+
+    </div>
+</div>
